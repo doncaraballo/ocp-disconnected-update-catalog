@@ -1,10 +1,8 @@
-# OpenShift Disconnected Installation
-
 # Update Application Catalog
 
 An OpenShift disconnection installation presents many challenges, many of which include developing a method to make the required OpenShift software registries and container images available to an environment that does not have access the Internet.  And as with any software project, updates will need to be made a system from time to time.  One such update could include making a newer software version container image release available to those utilizing the web console application catalog.  
 
-By default, OpenShift provides a number of base container images.  However, the latest updates for those respective images will need to be added afterwards.  For this example, we will import the latest Python image into OpenShift and make it available to users as part of the application catalog.
+By default, OpenShift provides a number of base container images.  However, the latest updates for those respective images will need to be added afterwards.  In this example, we will import the latest Python image into OpenShift and make it available to users as part of the application catalog.
 
 ## Importing a Container Image
  
@@ -12,7 +10,7 @@ OpenShift ships with the following Python container images (2.7, 3.3, 3.4, and 3
 ```
 oc import-image python:3.6 --from=registry.access.redhat.com/rhscl/python-36-rhel7:latest --confirm
 ```
-The import-image command allows one to import the lastest image information.  In our example, we created the Python 3.6 tag in the "python" image stream (imagestream:tag).  The 3.6 image is imported from the registry.access.redhat.com repository.  The "--confirm" option is required to require OpenShift to create the Image Stream definition. 
+The import-image command allows one to import the lastest image information.  In our example, we created the Python 3.6 tag in the "python" image stream (imagestream:tag).  The 3.6 image is imported from the registry.access.redhat.com repository.  The "--confirm" option is required to require OpenShift to create the Image Stream definition.  Please note that the container registry can be a public registry (such as registry.access.redhat.com, docker.io) or an external private registry (which would be the used as part of a disconnected installation).
 
 To view the updated image stream for Python, the following command can be run:
 ```
