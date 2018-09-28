@@ -1,4 +1,6 @@
-# OpenShift Disconnected Installation: Update Application Catalog
+# OpenShift Disconnected Installation
+
+# Update Application Catalog
 
 An OpenShift disconnection installation presents many challenges, many of which include developing a method to make the required OpenShift software registries and container images available to an environment that does not have access the Internet.  And as with any software project, updates will need to be made a system from time to time.  One such update could include making a newer software version container image release available to those utilizing the web console application catalog.  
 
